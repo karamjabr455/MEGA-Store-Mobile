@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MEGA Store Mobile</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* شاشة التحميل كاملة */
+    #loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(43, 47, 48, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 1s ease;
+      color: white;
+      font-size: 1.5rem;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+
+    /* دوار بسيط */
+    .spinner {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #FFA500;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- المحتوى الرئيسي ظاهر من البداية -->
+  <div class="container">
+    <div class="content">
+      <div class="corner-image" data-animate>
+        <img src="/Vector 1.svg" alt="Corner Image" />
+      </div>
+      <div class="logo" data-animate>
+        <img src="/تصميم بدون عنوان (1) 2.svg" alt="MEGA Store Mobile" />
+      </div>
+      <div class="phones">
+        <img src="/iPhone 13 Pro.svg" alt="Mobile App Showcase" />
+      </div>
+      <div class="text" data-animate>
+        <h1>Your Mobile Hub</h1>
+      </div>
+      <div class="wave-shape" data-animate></div>
+    </div>
+  </div>
+
+  <!-- شاشة التحميل فوق المحتوى -->
+  <div id="loading-screen">
+    <div class="spinner"></div>
+    جاري التحميل...
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const loader = document.getElementById("loading-screen");
+
+      setTimeout(() => {
+        // نبدأ بتقليل الشفافية تدريجياً
+        loader.style.opacity = 0;
+
+        setTimeout(() => {
+          // نخفي شاشة التحميل نهائياً بعد الانتهاء من الفيد اوت
+          loader.style.display = "none";
+
+          // بعد ثانية واحدة ننتقل لصفحة التواصل
+          setTimeout(() => {
+            window.location.href = "contact.html";
+          }, 1000);
+
+        }, 1000); // مدة الفيد اوت 1 ثانية
+
+      }, 3000); // مدة ظهور شاشة التحميل 3 ثواني
+    });
+  </script>
+
+</body>
+</html>

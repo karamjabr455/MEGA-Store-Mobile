@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.content {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+.phones {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-width: 800px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phones img {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.text {
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.text h1 {
+    color: #f7f5f5;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.wave-shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #FF8C00, #FFA500);
+    clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 1;
+}
+
+.wave-shape::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2B2F30;
+    clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: -1;
+}
+
+@media (max-width: 1024px) {
+    .text h1 {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .phones {
+        width: 70%;
+        top: 55%;
+    }
+
+    .logo img {
+        width: 20px;
+    }
+
+    .corner-image {
+        width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .text {
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        top: 85%;
+        text-align: center;
+        width: 100%;
+    }
+
+    .text h1 {
+        font-size: 2.3rem;
+        white-space: nowrap;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        top: 40px;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    .logo img {
+        width: 350px;
+    }
+
+    .phones {
+        width: 65%;
+        top: 52%;
+    }
+}
+
+@media (max-width: 480px) {
+    .text {
+        top: 80%; /* زيادة المسافة في الشاشات الأصغر */
+    }
+
+    .text h1 {
+        font-size: 1.5rem;
+    }
+    .wave-shape {
+        position: absolute;
+        bottom: -90px;
+        left: 0;
+        width: 100%;
+        height: 150%;
+        background: linear-gradient(45deg, #FF8C00, #FFA500);
+        clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0% 100%);
+        z-index: 1;
+    }
+    
+    .wave-shape::before {
+        content: '';
+        position: absolute;
+        top: -40px;  /* تقليل المسافة من 3px إلى 1px */
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #2B2F30;
+        clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0% 100%);
+        z-index: -1;
+    }
+}
+    .phones {
+        width: 85%;
+        top: 50%;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .corner-image {
+        width: 250px;
+    }
+
+
+@media (max-width: 480px) {
+    .text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .phones {
+        width: 95%;
+        top: 50%;
+    }
+
+    .logo {
+        top: 10px;
+        left: 10px;
+    }
+
+    .logo img {
+        width:80px;
+    }
+
+    .corner-image {
+        width: 150px;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 320px) {
+    .corner-image {
+        width: 100px;
+    }
+}
+
+.corner-image {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 2;
+    width: 550px;  /* يمكنك تعديل الحجم حسب الحاجة */
+}
+
+.corner-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .corner-image img {
+        width: 80%;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .corner-image img {
+        width: 60%;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 320px) {
+    .corner-image img {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        position: absolute;
+        left: 50%;
+        top: 50px;  /* تعديل من 30px إلى 50px لتنزيل اللوجو */
+        transform: translateX(-50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    .logo img {
+        width: 400px;  /* تكبير من 200px إلى 300px */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        top: 20px;
+    }
+
+    .logo img {
+        width: 250px;  /* زيادة من 180px إلى 250px */
+    }
+}
+
+@media (max-width: 320px) {
+    .logo img {
+        width: 200px;  /* زيادة من 150px إلى 200px */
+    }
+}
+@media (min-width: 1025px) {
+    .logo img {
+      width: 220px; /* كبر حسب ما بدك، مثلاً 120px أو أكثر */
+    }
+  }
+  
+/*    */
+/* الحالة الابتدائية لكل العناصر */
